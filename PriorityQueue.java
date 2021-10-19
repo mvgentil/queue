@@ -1,38 +1,36 @@
 import java.util.ArrayList;
 
-public class PriorityQueue<K, V> implements Comparable<Entry<K,V>>{
+public class PriorityQueue<K, V> {
   
   ArrayList<Entry<K,V>> list = new ArrayList<>();
-  int size = 0;
 
+  //O(1)
   public int size(){
-    return size;
+    return list.size();
   }
 
+  //O(1)
   public boolean isEmpty(){
-    return size == 0;
+    return list.isEmpty();
   }
 
+
+  //O(1)
   public Entry<K,V> min(){
-    return null;
+    return list.get(0);
   }
 
+  //O(1)
   public Entry<K,V> insert(Entry<K,V> element){
     list.add(element);
-    size += 1;
     return element;
   }
 
+  //O(1)
   public Entry<K,V> removeMin(){
     Entry<K,V> min = min();
-    list.remove(min());
+    list.remove(min);
     return min;
-  }
-
-  @Override
-  public int compareTo(Entry<K, V> o) {
-    
-    return 0;
   }
 
 
