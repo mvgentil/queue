@@ -1,8 +1,11 @@
-import java.util.ArrayList;
 
-public class PriorityQueue<K, V> {
+import java.util.Comparator;
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class PriorityQueue<K,V>{
   
-  ArrayList<Entry<K,V>> list = new ArrayList<>();
+  LinkedList<Paciente> list = new LinkedList<>();
 
   //O(1)
   public int size(){
@@ -14,25 +17,39 @@ public class PriorityQueue<K, V> {
     return list.isEmpty();
   }
 
-
   //O(1)
-  public Entry<K,V> min(){
-    return list.get(0);
+  public Entry<Integer, String> min() throws NullPointerException{
+    Entry<Integer, String> min = list.peek();
+    if(min == null){
+        throw new NullPointerException("Fila Vazia");
+    } else {
+        return min;
+      }
+  }
+
+  //O(n)
+  public Entry<Integer, String> insert(Integer key, String value){
+    Paciente newPaciente = new Paciente(key, value);
+    if(list.isEmpty()) {
+      list.addFirst(newPaciente);
+      return newPaciente;
+    } else {
+      list.add(newPaciente);
+        Collections.sort(list, new Comparator<Paciente>() {
+          @Override
+          public int compare(Paciente p1, Paciente p2) {
+            if(p2.getKey() > p1.getKey()) return -1;
+            if(p2.getKey() < p1.getKey()) return 1;
+            return 0;
+          }
+        });
+      return newPaciente;
+    }
   }
 
   //O(1)
-  public Entry<K,V> insert(Entry<K,V> element){
-    list.add(element);
-    return element;
+  public Paciente removeMin(){
+    return list.poll();
   }
-
-  //O(1)
-  public Entry<K,V> removeMin(){
-    Entry<K,V> min = min();
-    list.remove(min);
-    return min;
-  }
-
-
 
 }

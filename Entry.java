@@ -2,7 +2,7 @@
 
 public interface Entry<K, V>{
   
-  K getKey();
-  V getValue();
+  public K getKey();
+  public V getValue();
 
 }

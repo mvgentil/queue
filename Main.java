@@ -3,23 +3,36 @@ public class Main {
   
   public static void main(String[] args) {
 
-    PriorityQueue<Integer, String> pacientes = new PriorityQueue<>();
+    PriorityQueue<Integer, String> queue = new PriorityQueue<>();
 
-    Paciente paciente1 = new Paciente(2, "Joao");
-    Paciente paciente2 = new Paciente(1, "Jose");
-    Paciente paciente3 = new Paciente(2, "Maria");
-    Paciente paciente4 = new Paciente(3, "Pedro");
-    Paciente paciente5 = new Paciente(1, "Joana");
-    Paciente paciente6 = new Paciente(3, "Paulo");
 
-    pacientes.insert(paciente1);
-    pacientes.insert(paciente2);
-    pacientes.insert(paciente3);
-    pacientes.insert(paciente4);
-    pacientes.insert(paciente5);
-    pacientes.insert(paciente6);
+    queue.insert(2, "Joao");
+    queue.insert(1, "Jose");
+    queue.insert(2, "Maria");
+    queue.insert(3, "Pedro");
+    queue.insert(1, "Joana");
+    queue.insert(3, "Paulo");
 
-    System.out.println(pacientes.removeMin());
+    System.out.println("Tamanho da fila: " + queue.size()); 
+    System.out.println(queue.min()); 
+    System.out.println(queue.removeMin()); 
+    System.out.println("Tamanho da fila: " + queue.size()); 
+    System.out.println(queue.min()); 
+    System.out.println(queue.removeMin()); 
+    System.out.println("Tamanho da fila: " + queue.size()); 
+    System.out.println(queue.min()); 
+    System.out.println(queue.removeMin()); 
+    System.out.println("Tamanho da fila: " + queue.size()); 
+    System.out.println(queue.min()); 
+    System.out.println(queue.removeMin()); 
+    System.out.println("Tamanho da fila: " + queue.size()); 
+    System.out.println(queue.min()); 
+    System.out.println(queue.removeMin()); 
+    System.out.println("Tamanho da fila: " + queue.size()); 
+    System.out.println(queue.min()); 
+    System.out.println(queue.removeMin()); 
+    System.out.println("Tamanho da fila: " + queue.size()); 
+
     
   }
 }
